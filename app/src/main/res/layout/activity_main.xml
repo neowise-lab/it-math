@@ -60,9 +60,9 @@
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:max="5"
-        android:progress="1" />
+        android:layout_marginBottom="40dp"
+        android:max="4"
+        android:progress="0" />
 
     <Button
         android:id="@+id/continueButton"
@@ -75,6 +75,7 @@
         android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
     <Button
         android:id="@+id/topGamers"
         android:layout_width="match_parent"
@@ -86,6 +87,7 @@
         android:text="Топ игроков"
         android:textAllCaps="false"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"/>
 
 </LinearLayout>

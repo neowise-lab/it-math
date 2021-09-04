@@ -22,14 +22,16 @@ class QuestionsActivity : AppCompatActivity() {
         binding = ActivityQuestionsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val maxProblems = intent.getIntExtra(EXTRA_DIFFICULT, 1) * 10
+        val maxProblems = (intent.getIntExtra(EXTRA_DIFFICULT, 0) + 1) * 10
         viewModel = ViewModelProvider(this, QuestionsViewModelFactory(maxProblems)).get()
 
         initName()
         initButtons()
 
+        binding.progressBar.max = maxProblems
+
         viewModel.progress.observe(this) { progress ->
-            binding.progressBar.setProgress(progress.current * 10, true)
+            binding.progressBar.setProgress(progress.current, true)
             binding.step.text = "${progress.current} из ${progress.max}"
         }
 
